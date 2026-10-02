@@ -11,8 +11,14 @@ public class Questao04 {
         int aprovados = 0;
 
         for (int i = 0; i < notas.length; i++) {
-            System.out.print("Nota " + (i + 1) + ": ");
-            notas[i] = scanner.nextDouble();
+            // CORREÇÃO: Validação de nota entre 0 e 10
+            do {
+                System.out.print("Nota " + (i + 1) + ": ");
+                notas[i] = scanner.nextDouble();
+                if (notas[i] < 0 || notas[i] > 10) {
+                    System.out.println("Nota inválida. Digite um valor entre 0 e 10.");
+                }
+            } while (notas[i] < 0 || notas[i] > 10);
             
             soma += notas[i];
             
