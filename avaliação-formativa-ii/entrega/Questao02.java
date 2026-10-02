@@ -20,8 +20,14 @@ public class Questao02 {
 
         System.out.println();
         for (int i = 1; i <= quantidade; i++) {
-            System.out.print("Nota do estudante " + i + ": ");
-            double nota = scanner.nextDouble();
+            double nota;
+            do {
+                System.out.print("Nota do estudante " + i + ": ");
+                nota = scanner.nextDouble();
+                if (nota < 0 || nota > 10) {
+                    System.out.println("Nota inválida. Digite um valor entre 0 e 10.");
+                }
+            } while (nota < 0 || nota > 10);
 
             soma += nota;
 
