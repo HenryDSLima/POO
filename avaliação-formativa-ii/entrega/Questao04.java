@@ -11,7 +11,6 @@ public class Questao04 {
         int aprovados = 0;
 
         for (int i = 0; i < notas.length; i++) {
-            // CORREÇÃO: Validação de nota entre 0 e 10
             do {
                 System.out.print("Nota " + (i + 1) + ": ");
                 notas[i] = scanner.nextDouble();
